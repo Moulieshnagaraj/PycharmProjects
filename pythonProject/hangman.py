@@ -185,6 +185,7 @@ def player1():
             legs()
 
             cprint("You let a good man to die!!",'red',"on_yellow",attrs=["bold"])
+            print("CORRECT WORD:", random_word)
             break
 
 
@@ -222,14 +223,11 @@ def player1():
 
 
 def player2():
-    print('HINT: cricket players names')
-    turns = 5
-    num=1
-    for w in word:
-        print(num,'.',w)
-        num+=1
 
-    choose=input("Enter the word from the list above").lower().strip()
+    turns = 5
+
+
+    choose=input("Enter a word:").lower().strip()
 
 
     random_word=choose
@@ -258,7 +256,8 @@ def player2():
         if turns == 0:
             legs()
 
-            cprint("You let a good man to die!!", 'red', "on_yellow", attrs=["bold"])
+            cprint("You let a good man to die!!", 'red', "on_cyan", attrs=["bold"])
+            print("CORRECT WORD:",random_word)
             break
 
         print('\n')
@@ -290,7 +289,7 @@ def player2():
                 cprint("Oops!. wrong guess.", 'red')
                 print("only {} turns left".format(turns))
         else:
-            cprint("Invalid character..", 'red', 'on_magenta')
+            cprint("Invalid character..", 'red', 'on_cyan')
 
 
 mode=input("Choose the mode:").strip()
